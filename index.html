@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="de">
 <head>
@@ -8,105 +7,28 @@
     <!-- Tailwind CSS for styling -->
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
-        /* Custom styles for better aesthetics */
-        body {
-            font-family: 'Inter', sans-serif;
-        }
-        /* Style for the loading spinner */
+        body { font-family: 'Inter', sans-serif; }
         .loader {
-            border: 4px solid #f3f3f3;
-            border-radius: 50%;
-            border-top: 4px solid #3498db;
-            width: 40px;
-            height: 40px;
+            border: 4px solid #f3f3f3; border-radius: 50%;
+            border-top: 4px solid #3498db; width: 40px; height: 40px;
             animation: spin 1s linear infinite;
         }
-        @keyframes spin {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
-        }
-        /* Custom styles for collapsible sections */
-        details > summary {
-            cursor: pointer;
-            list-style: none; /* Remove default marker */
-            padding: 1rem;
-            background-color: #f9fafb;
-            border-radius: 0.5rem;
-            font-weight: 600;
-            transition: background-color 0.2s;
-        }
-        details > summary:hover {
-            background-color: #f3f4f6;
-        }
-        details[open] > summary {
-            border-bottom-left-radius: 0;
-            border-bottom-right-radius: 0;
-        }
-        details > summary::before {
-            content: '▶';
-            margin-right: 0.5rem;
-            display: inline-block;
-            transition: transform 0.2s;
-        }
-        details[open] > summary::before {
-            transform: rotate(90deg);
-        }
-        .feedback-content {
-            padding: 1rem;
-            border: 1px solid #e5e7eb;
-            border-top: none;
-            border-bottom-left-radius: 0.5rem;
-            border-bottom-right-radius: 0.5rem;
-        }
-        /* Highlight styles for corrected text */
-        .korrektur-hinzugefuegt {
-            background-color: #d1fae5; /* Green for additions */
-            color: #065f46;
-            text-decoration: none;
-            padding: 2px 4px;
-            border-radius: 4px;
-        }
-        .korrektur-entfernt {
-            background-color: #fee2e2; /* Red for deletions */
-            color: #991b1b;
-            text-decoration: line-through;
-            padding: 2px 4px;
-            border-radius: 4px;
-        }
-        /* --- NEW STYLES FOR DETAILED CORRECTIONS --- */
-        .fehler-rechtschreibung {
-            background-color: #fee2e2; /* Red */
-            color: #991b1b;
-            padding: 2px 4px;
-            border-radius: 4px;
-        }
-        .fehler-grammatik {
-            background-color: #ffedd5; /* Orange */
-            color: #9a3412;
-            padding: 2px 4px;
-            border-radius: 4px;
-        }
-        .fehler-zeichensetzung {
-            background-color: #dbeafe; /* Blue */
-            color: #1e40af;
-            padding: 2px 4px;
-            border-radius: 4px;
-        }
-        [title] {
-            cursor: help;
-            text-decoration: underline;
-            text-decoration-style: dotted;
-        }
-        /* Styles for hint area */
-        .hint {
-            padding: 0.5rem;
-            margin-top: 0.5rem;
-            background-color: #f3f4f6;
-            border-left: 4px solid #60a5fa;
-            border-radius: 4px;
-        }
+        @keyframes spin { 0%{transform:rotate(0deg)} 100%{transform:rotate(360deg)} }
+        details > summary{ cursor:pointer; list-style:none; padding:1rem; background:#f9fafb; border-radius:.5rem; font-weight:600; transition:background-color .2s;}
+        details > summary:hover{ background:#f3f4f6;}
+        details[open] > summary{ border-bottom-left-radius:0; border-bottom-right-radius:0;}
+        details > summary::before{ content:'▶'; margin-right:.5rem; display:inline-block; transition:transform .2s;}
+        details[open] > summary::before{ transform:rotate(90deg);}
+        .feedback-content{ padding:1rem; border:1px solid #e5e7eb; border-top:none; border-bottom-left-radius:.5rem; border-bottom-right-radius:.5rem;}
+        .korrektur-hinzugefuegt{ background:#d1fae5; color:#065f46; text-decoration:none; padding:2px 4px; border-radius:4px;}
+        .korrektur-entfernt{ background:#fee2e2; color:#991b1b; text-decoration:line-through; padding:2px 4px; border-radius:4px;}
+        /* --- Styles für Detail-Korrektur --- */
+        .fehler-rechtschreibung{ background:#fee2e2; color:#991b1b; padding:2px 4px; border-radius:4px;}
+        .fehler-grammatik{ background:#ffedd5; color:#9a3412; padding:2px 4px; border-radius:4px;}
+        .fehler-zeichensetzung{ background:#dbeafe; color:#1e40af; padding:2px 4px; border-radius:4px;}
+        [title]{ cursor:help; text-decoration:underline; text-decoration-style:dotted;}
+        .hint{ padding:.5rem; margin-top:.5rem; background:#f3f4f6; border-left:4px solid #60a5fa; border-radius:4px;}
     </style>
-    <!-- Google Font for a clean look -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -119,10 +41,7 @@
             <p class="text-lg text-gray-600 mt-2">Analysiere das Bild und beantworte die Fragen.</p>
         </header>
 
-        <!-- Main two-column layout -->
         <main class="grid grid-cols-1 lg:grid-cols-2 gap-8">
-
-            <!-- Left Column: Task -->
             <section id="task-section" class="bg-white p-6 rounded-lg shadow-md">
                 <h2 class="text-2xl font-bold mb-4">Aufgabe: Der Wasserkreislauf</h2>
                 <p class="mb-4">
@@ -134,9 +53,7 @@
                      onerror="this.onerror=null;this.src='https://placehold.co/600x400/cccccc/ffffff?text=Bild+nicht+verfügbar';">
             </section>
 
-            <!-- Right Column: Input & Feedback -->
             <section id="interactive-section">
-                <!-- User Input Area -->
                 <div id="input-area" class="bg-white p-6 rounded-lg shadow-md">
                     <h2 class="text-2xl font-bold mb-4">Deine Antwort</h2>
                     <textarea id="student-text" class="w-full h-64 p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition" placeholder="Schreibe hier deine Antwort..."></textarea>
@@ -146,25 +63,21 @@
                     </button>
                 </div>
 
-                <!-- Loading Animation Area (hidden by default) -->
                 <div id="loading-area" class="hidden bg-white p-6 rounded-lg shadow-md flex-col items-center justify-center h-full">
                     <div class="loader"></div>
                     <p class="mt-4 text-gray-600 font-semibold">Dein Text wird analysiert...</p>
                     <p class="text-sm text-gray-500">Das kann einen Moment dauern.</p>
                 </div>
 
-                <!-- Feedback Display Area (hidden by default) -->
                 <div id="feedback-area" class="hidden bg-white p-6 rounded-lg shadow-md">
                     <h2 class="text-2xl font-bold mb-6">Dein Feedback</h2>
                     
                     <div class="space-y-4">
-                        <!-- Collapsible Section 1: Strengths -->
                         <details>
                             <summary>Das war schon richtig gut!</summary>
                             <div id="feedback-staerken" class="feedback-content"></div>
                         </details>
 
-                        <!-- Collapsible Section 2: Improvements (Staged Feedback) -->
                         <details>
                             <summary>Hier gibt es Verbesserungspotenzial</summary>
                             <div class="feedback-content">
@@ -175,13 +88,11 @@
                             </div>
                         </details>
                         
-                        <!-- Section for Detailed Corrections -->
                         <details>
                             <summary>Detail-Korrektur (Rechtschreibung, Grammatik etc.)</summary>
                             <div id="feedback-detail-korrektur" class="feedback-content prose"></div>
                         </details>
 
-                        <!-- Section for Corrected Text (behind a button) -->
                         <div id="solution-wrapper">
                             <div id="show-solution-container" class="p-4 bg-gray-100 rounded-lg text-center">
                                 <p class="mb-3 text-sm text-gray-600">Versuche zuerst, deinen Text mit dem Feedback oben zu verbessern.</p>
@@ -265,8 +176,10 @@
             .then(data => {
                 feedbackStaerken.innerHTML = `<p>${data.staerken}</p>`;
                 feedbackKorrektur.innerHTML = `<p>${data.korrektur}</p>`;
-                feedbackDetailKorrektur.innerHTML = `<p>${data.detail_korrektur}</p>`;
                 
+                // >>> FIX: benutze den richtigen Schlüssel & keinen zusätzlichen <p>-Wrapper
+                feedbackDetailKorrektur.innerHTML = data.detailKorrektur || '';
+
                 // Setup staged hints
                 currentHints = data.verbesserungen || [];
                 currentHintIndex = 0;
@@ -278,7 +191,6 @@
                 }
 
                 // Reset UI states
-                // === FIX WAS HERE ===
                 detailsStaerken.open = false;
                 detailsVerbesserungen.open = false;
                 detailsDetailKorrektur.open = false;
